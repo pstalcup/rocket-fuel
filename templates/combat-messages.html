@@ -1,0 +1,10 @@
+<div class="container" style="min-height: 300px;" >
+   <div ng-repeat="message in messages" class="alert" ng-class="{
+      'alert-success': message.type === 'success', 
+      'alert-info': message.type === 'info', 
+      'alert-warning': message.type === 'warning', 
+      'alert-danger': message.type === 'danger'
+   }">
+      {{message.content}}
+   </div>
+</div>   

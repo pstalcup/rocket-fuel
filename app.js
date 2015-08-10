@@ -20,8 +20,7 @@
 				}, {
 					text:"Run",
 					options: ["A","B","C"]
-				}],
-			selected: true
+				}]
 		},{
 			name: 'Will',
 			hp: {

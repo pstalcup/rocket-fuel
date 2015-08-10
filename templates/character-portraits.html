@@ -1,8 +1,8 @@
 <div class="row">
-   <div ng-repeat="character in characters" class="col-sm-3">
+   <div ng-repeat="character in characters" class="col-sm-3" ng-class="{selected: character.selected}">
       {{character.name}}
       <div class="progress">
-         <div class="progress-bar" role="progressbar" aria-valuenow="{{portrait.percentage(character.hp)}}" 
+         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{portrait.percentage(character.hp)}}" 
             aria-valuemin="0" aria-valuemax="100" style="width: {{portrait.percentage(character.hp)}}%">
             <span>{{character.hp.current}}/{{character.hp.max}}</span>
          </div>

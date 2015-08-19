@@ -3,7 +3,17 @@
  */
 
 var gulp = require('gulp');
+var inject = require('gulp-inject');
 var browserSync = require('browser-sync').create();
+
+gulp.task('index', function(){
+    var target = gulp.src('./index.html');
+    var sources = gulp.src('./app/**/*.js', {read:false});
+
+    console.log(sources);
+
+    return target.pipe(inject(sources)).pipe(gulp.dest('./'));
+});
 
 gulp.task('serve',function(){
     browserSync.init({
@@ -12,3 +22,6 @@ gulp.task('serve',function(){
         }
     });
 });
+
+
+gulp.watch('./app/**/*.js', browserSync.reload);

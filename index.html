@@ -16,7 +16,6 @@
 		</style>
 	</head>
 	<body ng-app="rpg">
-		<!-- App contents --> 
 		<div class="container" ng-controller="CombatController as combat">
 			<character-portraits characters="villains"></character-portraits>
 			<combat-messages></combat-messages>
@@ -26,7 +25,11 @@
 			</div>
 			<!--<game-info></game-info>-->
 		</div>
-		<!-- Script includes -->
-		<script src="app.js"></script>
+		<!-- inject:js -->
+		<script src="/app/app.js"></script>
+		<script src="/app/combat/combat-controller.js"></script>
+		<script src="/app/combat/directives.js"></script>
+		<script src="/app/combat/services.js"></script>
+		<!-- endinject -->
 	</body>
 </html>

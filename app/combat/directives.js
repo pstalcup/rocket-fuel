@@ -46,10 +46,13 @@
             controller: ['$scope', 'GameData', function ($scope, GameData) {
                 $scope.characters = GameData.heroes;
                 $scope.previousAction = {};
-                $scope.act = function (action) {
+                $scope.select = function (action) {
                     $scope.previousAction.selected = false;
                     action.selected = true;
                     $scope.previousAction = action;
+                }
+                $scope.act = function(option) {
+                    option.choose(GameData.heroes.concat(GameData.enemies));
                 }
             }]
         };

@@ -1,11 +1,11 @@
 
 <div class="row" ng-repeat="character in characters" ng-show="character.selected">
-   <button ng-repeat="action in character.actions" ng-click="act(action)" class="btn col-sm-3" style="margin-left: 5px; margin-right: 5px">{{action.text}}</button>
+   <button ng-repeat="action in character.actions" ng-click="select(action)" class="btn col-sm-3">{{action.text}}</button>
 </div>
 <div class="row" ng-repeat="character in characters" ng-show="character.selected">
-  <ul ng-repeat="action in character.actions" class="list-group col-sm-3" style="margin-left: 5px; margin-right: 5px">
-     <li ng-repeat="option in action.options" class="list-group-item" ng-show="action.selected">
-        {{option}}
+  <ul ng-repeat="action in character.actions" class="list-group col-sm-3">
+     <li ng-repeat="option in action.options" ng-click="act(option)" class="list-group-item col-sm-12" ng-show="action.selected">
+        {{option.text}}
      </li>
   </ul>
 </div>
